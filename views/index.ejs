@@ -10,6 +10,25 @@
     <h1>Hello World!</h1>
     <h2>Desarrollo de Soluciones en la Nube - <%=name%></h2>
 
-    <h3><%=JSON.stringify(classes)%></h3>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Profesor</th>
+                <th>Aula</th>
+              </tr>
+        </thead>
+        <tbody>
+        <% Object.values(classes).forEach(val => { %>
+            <tr>
+                <td><%=val.id%></td>
+                <td><%=val.name%></td>
+                <td><%=val.teacher%></td>
+                <td><%=val.classroom%></td>
+              </tr>
+          <% }); %>
+        </tbody>
+      </table>
 </body>
 </html>
